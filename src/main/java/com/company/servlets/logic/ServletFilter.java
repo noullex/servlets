@@ -41,6 +41,7 @@ public class ServletFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
         String[] list = req.getRequestURI().split("/");
         String page = list[list.length - 1];
         if (page.equals("admin_page.jsp") || page.equals("admin_page")) {
@@ -50,10 +51,10 @@ public class ServletFilter implements Filter {
                     filterChain.doFilter(request, response);
                     break;
                 case USER:
-                    req.getRequestDispatcher("/user_page.jsp").forward(request, response);
+                    res.sendRedirect("/jsp-webapp/user_page");
                     break;
                 case NONREGISTERED:
-                    req.getRequestDispatcher("/register.jsp").forward(request, response);
+                    res.sendRedirect("/jsp-webapp/registration");
                     break;
             }
             return;

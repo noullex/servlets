@@ -23,7 +23,7 @@
                     <td align="center" colspan = "2"><input type = "submit" name="button" value = "sign in"/></td>
                 </tr>
                 <tr>
-                    <td align="center" colspan = "2"><a href="${pageContext.request.contextPath}/registration.jsp">sign up</a></td>
+                    <td align="center" colspan = "2"><a href="${pageContext.request.contextPath}/registration">sign up</a></td>
                 </tr>
             </table>
         </form>

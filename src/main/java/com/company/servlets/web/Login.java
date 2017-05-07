@@ -29,13 +29,13 @@ public class Login extends HttpServlet {
                 request.getParameter("parameter_pwd"));
         switch (role) {
             case ADMIN:
-                request.getRequestDispatcher("/user_page.jsp").forward(request, response);
+                response.sendRedirect("/jsp-webapp/admin_page");
                 break;
             case USER:
-                request.getRequestDispatcher("/user_page.jsp").forward(request, response);
+                response.sendRedirect("/jsp-webapp/user_page");
                 break;
             case NONREGISTERED:
-                request.getRequestDispatcher("/registration.jsp").forward(request, response);
+                response.sendRedirect("/jsp-webapp/registration");
                 break;
         }
     }

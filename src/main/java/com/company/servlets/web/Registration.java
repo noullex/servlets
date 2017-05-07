@@ -24,6 +24,6 @@ public class Registration extends HttpServlet{
                 .replace("target\\servlets-webapp\\", "src\\main\\resources"));
         server.register(request.getParameter("login"), 
                 request.getParameter("password"));
-        request.getRequestDispatcher("/user_page.jsp").forward(request, response);
+        response.sendRedirect("/jsp-webapp/user_page");
     }
 }
